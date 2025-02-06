@@ -1,6 +1,7 @@
 // importo express e utilizzo la parte di routing
 const express = require('express');
 const router = express.Router();
+
 // importo le funzioni del controller
 const postController = require('../controllers/postController');
 
