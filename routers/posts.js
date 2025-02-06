@@ -1,26 +1,20 @@
 // importo express e utilizzo la parte di routing
 const express = require('express');
 const router = express.Router();
+// importo le funzioni del controller
+const postController = require('../controllers/postController');
 
 // index
-router.get('/', function (req, res) {
-res.send('Lista dei post');
-});
+router.get('/', postController.index);
 
 // show
-router.get('/:id', function (req, res) {
-res.send('Dettagli dei post' + req.params.id);
-});
+router.get('/:id', postController.show);
 
 // store
-router.post('/', function (req, res) {
-res.send('Creazione nuovo post');
-});
+router.post('/', postController.store);
 
 // update
-router.put('/:id', function (req, res) {
-res.send('Modifica integrale del post' + req.params.id);
-});
+router.put('/:id', postController.update);
 
 // modify
 router.patch('/:id', function (req, res) {
@@ -28,9 +22,7 @@ res.send('Modifica parziale del post' + req.params.id);
 });
 
 // destroy
-router.delete('/:id', function (req, res) {
-res.send('Eliminazione del post' + req.params.id);
-});
+router.delete('/:id', postController.destroy);
 
 // esporto il modulo della route
 module.exports = router;
