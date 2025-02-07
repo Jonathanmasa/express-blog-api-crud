@@ -26,6 +26,11 @@ function update(req, res) {
     res.send('Modifica integrale del post' + req.params.id);
 };
 
+// logica modify
+function modify(req, res) {
+    res.send('Modifica parziale del post' + req.params.id);
+    };
+
 // logica destroy
 function destroy(req, res) {
     // recupero l'ID dell'URL e lo trasformo in numero
@@ -50,4 +55,4 @@ function destroy(req, res) {
 };
 
 // esportiamo tutto
-module.exports = { index, show, store, update, destroy };
+module.exports = { index, show, store, update, destroy, modify};
