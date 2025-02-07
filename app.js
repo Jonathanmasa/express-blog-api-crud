@@ -4,6 +4,10 @@ const port = 3000;
 // importo il router dei posts
 const postsRouter = require('./routers/posts');
 
+// registro il body-parser per application/json
+app.use(express.json());
+
+// definiamo l'uso di una cartella per i file statici
 app.use(express.static('public'));
 
 // utilizzo la rotta dei post per definire la parte iniziale
