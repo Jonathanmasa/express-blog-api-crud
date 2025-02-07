@@ -18,11 +18,24 @@ function show(req, res) {
 
 // logica store
 function store(req, res) {
-    console.log(req.body);
-    
-    
-    
-    res.send('Creazione nuovo post');
+    const newId = posts[posts.length - 1].id + 1;
+    // Creiamo un nuovo oggetto post
+    const newPost = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags
+    }
+    // Aggiungiamo il nuovo post a posts
+    posts.push(newPost);
+
+    // controlliamo
+    console.log(posts);
+
+    // Restituiamo lo status corretto e la pizza appena creata
+    res.status(201);
+    res.json(newPost);
 };
 
 // logica update
