@@ -2,6 +2,12 @@
 const express = require('express');
 const router = express.Router();
 
+// importo il middleware di checkApi
+const checkApi = require('../middlewares/checkApi');
+
+// uso per il router
+router.use(checkApi);
+
 // importo le funzioni del controller
 const postController = require('../controllers/postController');
 

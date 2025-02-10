@@ -4,8 +4,14 @@ const port = 3000;
 // importo il router dei posts
 const postsRouter = require('./routers/posts');
 
+// importo il middleware di checkApi
+const checkApi = require('./middlewares/checkApi')
+
 // registro il body-parser per application/json
 app.use(express.json());
+
+// registro il middlware di checkApi
+app.use(checkApi);
 
 // definiamo l'uso di una cartella per i file statici
 app.use(express.static('public'));
