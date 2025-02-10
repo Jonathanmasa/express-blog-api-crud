@@ -5,13 +5,20 @@ const port = 3000;
 const postsRouter = require('./routers/posts');
 
 // importo il middleware di checkApi
-const checkApi = require('./middlewares/checkApi')
+// const checkApi = require('./middlewares/checkApi')
+
+// importo il middleware di errore
+const errorsHandler = require("./middlewares/errorsHandler");
 
 // registro il body-parser per application/json
 app.use(express.json());
 
 // registro il middlware di checkApi
-app.use(checkApi);
+// app.use(checkApi);
+
+// registro il middlware di errore
+app.use(errorsHandler);
+
 
 // definiamo l'uso di una cartella per i file statici
 app.use(express.static('public'));
