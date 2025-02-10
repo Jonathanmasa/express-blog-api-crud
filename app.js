@@ -10,6 +10,9 @@ const postsRouter = require('./routers/posts');
 // importo il middleware di errore
 const errorsHandler = require("./middlewares/errorsHandler");
 
+// importo il middlware di not found
+const notFound = require("./middlewares/notFound");
+
 // registro il body-parser per application/json
 app.use(express.json());
 
@@ -18,6 +21,9 @@ app.use(express.json());
 
 // registro il middlware di errore
 app.use(errorsHandler);
+
+// registro il middlware di  not found
+app.use(notFound);
 
 
 // definiamo l'uso di una cartella per i file statici
