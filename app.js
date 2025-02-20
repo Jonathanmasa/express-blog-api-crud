@@ -16,6 +16,8 @@ const notFound = require("./middlewares/notFound");
 // registro il body-parser per application/json
 app.use(express.json());
 
+// registro il middleware di CORS
+app.use(cors({origin: 'http://localhost:5173'}))
 // registro il middlware di checkApi
 // app.use(checkApi);
 
