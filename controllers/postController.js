@@ -3,8 +3,6 @@ const posts = require('../data/posts');
 
 // logica index
 function index(req, res) {
-    // inserisco errore di prova
-    errorediprova
     res.json(posts);
 };
 

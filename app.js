@@ -9,7 +9,7 @@ const cors = require('cors');
 
 
 // importo il middleware di checkApi
-// const checkApi = require('./middlewares/checkApi')
+const checkApi = require('./middlewares/checkApi')
 
 
 // importo il middleware di errore
@@ -29,7 +29,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 
 
 // registro il middlware di checkApi
-// app.use(checkApi);
+app.use(checkApi);
 
 // registro il middlware di errore
 app.use(errorsHandler);

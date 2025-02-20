@@ -1,6 +1,8 @@
 // importo express e utilizzo la parte di routing
 const express = require('express');
 const router = express.Router();
+// importo le funzioni del controller
+const postController = require('../controllers/postController');
 
 // importo il middleware di checkApi
 const checkApi = require('../middlewares/checkApi');
@@ -8,8 +10,7 @@ const checkApi = require('../middlewares/checkApi');
 // uso per il router
 router.use(checkApi);
 
-// importo le funzioni del controller
-const postController = require('../controllers/postController');
+
 
 // index
 router.get('/', postController.index);
