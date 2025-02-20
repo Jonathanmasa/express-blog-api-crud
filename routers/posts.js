@@ -5,10 +5,10 @@ const router = express.Router();
 const postController = require('../controllers/postController');
 
 // importo il middleware di checkApi
-const checkApi = require('../middlewares/checkApi');
+// const checkApi = require('../middlewares/checkApi');
 
 // uso per il router
-router.use(checkApi);
+// router.use(checkApi);
 
 
 
