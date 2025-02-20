@@ -4,8 +4,13 @@ const port = 3000;
 // importo il router dei posts
 const postsRouter = require('./routers/posts');
 
+// cors
+const cors = require('cors');
+
+
 // importo il middleware di checkApi
 // const checkApi = require('./middlewares/checkApi')
+
 
 // importo il middleware di errore
 const errorsHandler = require("./middlewares/errorsHandler");
@@ -13,11 +18,16 @@ const errorsHandler = require("./middlewares/errorsHandler");
 // importo il middlware di not found
 const notFound = require("./middlewares/notFound");
 
+// definiamo l'uso di una cartella per i file statici
+app.use(express.static('public'));
+
 // registro il body-parser per application/json
 app.use(express.json());
 
 // registro il middleware di CORS
-app.use(cors({origin: 'http://localhost:5173'}))
+app.use(cors({ origin: 'http://localhost:5173' }));
+
+
 // registro il middlware di checkApi
 // app.use(checkApi);
 
@@ -28,8 +38,7 @@ app.use(errorsHandler);
 app.use(notFound);
 
 
-// definiamo l'uso di una cartella per i file statici
-app.use(express.static('public'));
+
 
 // utilizzo la rotta dei post per definire la parte iniziale
 app.use("/posts", postsRouter)
